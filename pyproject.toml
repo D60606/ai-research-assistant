@@ -1,0 +1,20 @@
+[project]
+name = "my-research-assistant"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "d60606",email = "krishnaverma1628@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "langchain (>=0.3.27,<0.4.0)",
+    "langchain-community (>=0.3.27,<0.4.0)",
+    "streamlit (>=1.48.1,<2.0.0)",
+    "pypdf (>=6.0.0,<7.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
