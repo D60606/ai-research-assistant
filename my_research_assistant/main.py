@@ -7,7 +7,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.agents import Tool, AgentExecutor, ZeroShotAgent
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from langchain.schema import messages_from_dict
+
 
 loader = PyPDFLoader(r"C:\Users\hp\my_research_assistant\merc.pdf")
 
@@ -40,7 +40,7 @@ def dates_tool(_: str) -> str:
 
 
 dates_tool = Tool(
-    name="DocumentSummary",
+    name="DocumentDates",
     func=dates_tool,
     description="Extract dates and times from the PDF document. Input should be a simple question or empty string."
 )
@@ -125,7 +125,6 @@ while True:
     if user_input.lower() in ["exit", "quit"]:
         print("BBYE")
         break
-    # Pass user input string to agent_executor, not conversation_chain
     response = agent_executor.invoke(user_input)
     print("Assistant:", response)
 
